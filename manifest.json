@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Auto-Filter Gmail",
+  "version": "1.0",
+  "description": "Quickly trigger 'Filter messages like this' in Gmail with a keyboard shortcut.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "128": "icons/icon.png"
+    },
+    "default_title": "Auto-Filter Gmail"
+  },
+  "icons": {
+    "128": "icons/icon.png"
+  },
+  "commands": {
+    "trigger_filter": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Trigger Gmail's 'Filter messages like this'"
+    }
+  }
+}
