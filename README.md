@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Manifest Version](https://img.shields.io/badge/Manifest-v3-blue.svg)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 
-A lightweight Chrome Extension that allows you to quickly trigger Gmail's "Filter messages like this" functionality using a simple keyboard shortcut.
+A lightweight Chrome Extension that allows you to quickly trigger Gmail's "Filter messages like these" / "Filter messages like this" functionality using a simple keyboard shortcut.
 
 ## 🚀 Features
 
