@@ -34,12 +34,13 @@ function triggerFilter() {
   let attempts = 0;
   const findAndClickItem = () => {
     console.log(`Auto-Filter: Polling for menu item... (Attempt ${attempts + 1}/10)`);
-    // Find the "Filter messages like this" / "Filtrer les messages similaires" option
+    // Find the option containing 'filter'/'filtrer' AND a context word like 'message', 'like', or 'simil' (for French).
     const menuItems = Array.from(document.querySelectorAll('[role="menuitem"]'))
       .filter(item => {
-        const text = item.textContent || '';
-        // Check text and ensure item is visible
-        const match = /Filter messages like this|Filtrer les messages/i.test(text);
+        const text = (item.textContent || '').toLowerCase();
+        const hasFilter = text.includes('filter') || text.includes('filtrer');
+        const hasContext = text.includes('message') || text.includes('like') || text.includes('simil');
+        const match = hasFilter && hasContext;
         if (match && item.offsetHeight > 0) {
            console.log(`Auto-Filter: Found matching and visible item:`, item);
            return true;
@@ -50,14 +51,14 @@ function triggerFilter() {
       });
 
     if (menuItems.length > 0) {
-      console.log(`Auto-Filter: Clicking 'Filter messages like this' item`);
+      console.log(`Auto-Filter: Clicking 'Filter messages' item`);
       // Click the last one in case there are multiple open menus
       menuItems[menuItems.length - 1].click();
     } else if (attempts < 10) {
       attempts++;
       setTimeout(findAndClickItem, 50);
     } else {
-      console.warn("Auto-Filter: Could not find 'Filter messages like this' menu item after 10 attempts. It might not be loaded or text changed.");
+      console.warn("Auto-Filter: Could not find 'Filter messages' menu item after 10 attempts. It might not be loaded or text changed.");
     }
   };
 
