@@ -24,6 +24,7 @@ By default, the following keyboard shortcut is assigned:
 ## 🛠️ Installation
 
 ### Option 1: Load unpacked (For Developers)
+
 1. Clone or download this repository.
 2. Open Google Chrome and navigate to `chrome://extensions/`.
 3. Enable **Developer mode** in the top right corner.
@@ -32,6 +33,7 @@ By default, the following keyboard shortcut is assigned:
 ## 🤝 Contributing
 
 Contributions are welcome! If you'd like to improve the extension:
+
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
